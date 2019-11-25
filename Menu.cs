@@ -9,11 +9,11 @@ namespace task
         public void MenuList()
         {
               string command = " " ;
-              
+               switch (command ){
          while (command != "exit"){
              consoleHandler.Write("Please enter a command: ");
             command = consoleHandler.Read().ToLower();
-            switch (command )
+           
             {
                 case "add":
                    phonebook .AddPerson();
