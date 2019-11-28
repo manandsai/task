@@ -12,9 +12,23 @@ public Person AddPersoninConsole( Person person){
             Write("Enter Last Name: ");
             person.LastName = Read();
 
-            Write("Enter Phone Number: ");
+         
+            while (true)
+            {
+                Write("Enter Phone Number: ");
+                var number =   Read();
+                Regex isNumbervalid =  new Regex(@"^[0-9]{10}$");
+                if (isNumbervalid .IsMatch(number))
+                {
+                    person.PhoneNumber = number;
+                    break;
+                }
+                else 
+                {
+                    Console.WriteLine("Please enter the correct number");
 
-            person.PhoneNumber =   Read();
+                }
+            }
 
             Write("Enter Email: ");
             person.Email =   Read();
